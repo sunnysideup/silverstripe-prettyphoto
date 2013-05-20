@@ -1,0 +1,131 @@
+###############################################
+PrettyPhoto
+Pre 0.1 proof of concept
+###############################################
+
+Developer
+-----------------------------------------------
+Nicolaas Francken [at] sunnysideup.co.nz
+
+Requirements
+-----------------------------------------------
+SilverStripe 2.3.0 or greater.
+
+Documentation
+-----------------------------------------------
+adds the photoviewer - pretty photo
+(jQuery extension) to the site
+
+
+Installation Instructions
+-----------------------------------------------
+1. add module as per usual
+
+2. add the following stuff to controller class:
+
+class Page_Controller extends ContentController {
+
+	function init(){
+		parent::init();
+		PrettyPhoto::include_code();
+	}
+
+}
+
+OR TO REMOVE IT LIKE THIS:
+
+class MyPageWithoutPrettyPhoto_Controller extends Page_Controller {
+
+	function init(){
+		parent::init();
+		PrettyPhoto::block();
+	}
+
+}
+
+
+3. in your templates, add (the rel="prettPhoto" is the magic part):
+
+ <a href="mylargepicture.gif" rel="prettyPhoto"><img src="mysmallpicture.gif" /></a>
+
+ OR FOR A SET OF PHOTOS:
+
+ <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
+ <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
+
+4. go to mysite/_config.php and add the lines as detailed in /prettyphoto/_config.php
+
+e.g.
+
+//===================---------------- START prettyphoto MODULE ----------------===================
+PrettyPhoto::set_theme("dark_rounded");
+PrettyPhoto::set_more_config("AnimationSpeed: 'slow');
+//===================---------------- END prettyphoto MODULE ----------------===================
+
+
+
+Config Examples
+------------------------------------------------
+e.g.
+PrettyPhoto::set_more_config("AnimationSpeed: 'normal':, opacity: 0.80");
+
+choose from options below
+AnimationSpeed: 'normal', /* fast/slow/normal */
+opacity: 0.80, /* Value between 0 and 1 */
+showTitle: true, /* true/false */
+allowresize: true, /* true/false */
+default_width: 500,
+default_height: 344,
+counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
+theme: 'light_rounded', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
+wmode: 'opaque', /* Set the flash wmode attribute */
+autoplay: true, /* Automatically start videos: True/False */
+modal: false, /* If set to true, only the close button will close the window */
+changepicturecallback: function(){}, /* Called everytime an item is shown/changed */
+callback: function(){}, /* Called when prettyPhoto is closed */
+markup: '<div class="pp_pic_holder"> \
+			<div class="pp_top"> \
+				<div class="pp_left"></div> \
+				<div class="pp_middle"></div> \
+				<div class="pp_right"></div> \
+			</div> \
+			<div class="pp_content_container"> \
+				<div class="pp_left"> \
+				<div class="pp_right"> \
+					<div class="pp_content"> \
+						<div class="pp_fade"> \
+							<a href="#" class="pp_expand" title="Expand the image">Expand</a> \
+							<div class="pp_loaderIcon"></div> \
+							<div class="pp_hoverContainer"> \
+								<a class="pp_next" href="#">next</a> \
+								<a class="pp_previous" href="#">previous</a> \
+							</div> \
+							<div id="pp_full_res"></div> \
+							<div class="pp_details clearfix"> \
+								<a class="pp_close" href="#">Close</a> \
+								<p class="pp_description"></p> \
+								<div class="pp_nav"> \
+									<a href="#" class="pp_arrow_previous">Previous</a> \
+									<p class="currentTextHolder">0/0</p> \
+									<a href="#" class="pp_arrow_next">Next</a> \
+								</div> \
+							</div> \
+						</div> \
+					</div> \
+				</div> \
+				</div> \
+			</div> \
+			<div class="pp_bottom"> \
+				<div class="pp_left"></div> \
+				<div class="pp_middle"></div> \
+				<div class="pp_right"></div> \
+			</div> \
+		</div> \
+		<div class="pp_overlay"></div> \
+		<div class="ppt"></div>',
+image_markup: '<img id="fullResImage" src="" />',
+flash_markup: '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="{width}" height="{height}"><param name="wmode" value="{wmode}" /><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="{path}" /><embed src="{path}" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="{width}" height="{height}" wmode="{wmode}"></embed></object>',
+quicktime_markup: '<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" height="{height}" width="{width}"><param name="src" value="{path}"><param name="autoplay" value="{autoplay}"><param name="type" value="video/quicktime"><embed src="{path}" height="{height}" width="{width}" autoplay="{autoplay}" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"></embed></object>',
+iframe_markup: '<iframe src ="{path}" width="{width}" height="{height}" frameborder="no"></iframe>',
+inline_markup: '<div class="pp_inline clearfix">{content}</div>'
