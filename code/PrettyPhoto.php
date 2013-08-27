@@ -4,13 +4,13 @@ class PrettyPhoto extends Object {
 
 	private static $themes = array("dark_rounded", "dark_square", "facebook", "light_rounded", "light_square");
 
-	protected static $theme = "";
+	private static $theme = "";
 		static function set_theme($v) {if(!in_array($v, self::$themes)) {user_error("Please select a valid PrettyPhoto theme in PrettyPhoto::set_theme()", E_USER_WARNING);} self::$theme = $v;}
 
-	protected static $more_config = "social_tools: false";
+	private static $more_config = "social_tools: false";
 		static function set_more_config($v) {self::$more_config = $v;}
 
-	protected static $selector = "body";
+	private static $selector = "body";
 		static function set_selector($v) {self::$selector = $v;}
 
 	static function include_code() {
