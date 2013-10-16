@@ -10,7 +10,7 @@ class PrettyPhoto extends Object {
 
 	private static $selector = "body";
 
-	static function include_code() {
+	public static function include_code() {
 		if(Director::is_ajax()) {
 			self::block();
 		}
@@ -33,7 +33,7 @@ class PrettyPhoto extends Object {
 		}
 	}
 
-	static function block() {
+	public static function block() {
 		Requirements::block('prettyphoto/javascript/jquery.prettyPhoto.js');
 		Requirements::block('prettyphoto/css/prettyPhoto.css');
 		Requirements::block("prettyPhotoCustomScript");
