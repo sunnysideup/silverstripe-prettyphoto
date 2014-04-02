@@ -2,7 +2,7 @@
 	"name": "sunnysideup/prettyphoto",
 	"type": "silverstripe-module",
 	"description": "adds 'pretty photo' - a jQuery library to your Silverstripe application ",
-	"homepage": "http://www.silverstripe-webdevelopment.com",
+	"homepage": "https://github.com/sunnysideup/silverstripe-prettyphoto",
 	"keywords": ["prettyPhoto", "silverstripe"],
 	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
 	"authors":[
@@ -16,5 +16,8 @@
 	"require":{
 		"silverstripe/framework": "~3.1",
 		"silverstripe/cms": "~3.1"
+	},
+	"extra": {
+		"installer-name": "prettyphoto"
 	}
 }
