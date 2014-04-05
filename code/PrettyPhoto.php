@@ -20,14 +20,16 @@ class PrettyPhoto extends Object {
 			Requirements::css('prettyphoto/css/prettyPhoto.css');
 
 			$config = '';
-			if(self::$theme) {
-				$config .= "theme: '".self::$theme."'";
+			$theme = Config::inst()->get("PrettyPhoto", "theme");
+			$moreConfig = Config::inst()->get("PrettyPhoto", "more_config");
+			if($theme) {
+				$config .= "theme: '".$theme."'";
 			}
-			if($config && self::$more_config) {
+			if($config && $moreConfig) {
 				$config .= ", ";
 			}
-			if(self::$more_config) {
-				$config .= self::$more_config;
+			if($config) {
+				$config .= $moreConfig;
 			}
 			Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.self::$selector.'")});', "prettyPhotoCustomScript");
 		}
