@@ -1,20 +1,34 @@
 ###############################################
-PrettyPhoto
-Pre 0.1 proof of concept
+Pretty Photo
 ###############################################
+
+Adds the jQuery Pretty Photo extension to your
+Silverstripe Website.
+
+SEE:
+- http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
+- http://jquery-plugins.net/prettyphoto-jquery-lightbox-clone
+
 
 Developer
 -----------------------------------------------
 Nicolaas Francken [at] sunnysideup.co.nz
 
+
 Requirements
 -----------------------------------------------
-SilverStripe 2.3.0 or greater.
+see composer.json
+
 
 Documentation
 -----------------------------------------------
-adds the photoviewer - pretty photo
-(jQuery extension) to the site
+Please contact author for more details.
+
+Any bug reports and/or feature requests will be
+looked at in detail
+
+We are also very happy to provide personalised support
+for this module in exchange for a small donation.
 
 
 Installation Instructions
@@ -53,21 +67,14 @@ class MyPageWithoutPrettyPhoto_Controller extends Page_Controller {
  <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
  <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
 
-4. go to mysite/_config.php and add the lines as detailed in /prettyphoto/_config.php
-
-e.g.
-
-//===================---------------- START prettyphoto MODULE ----------------===================
-PrettyPhoto::set_theme("dark_rounded");
-PrettyPhoto::set_more_config("AnimationSpeed: 'slow');
-//===================---------------- END prettyphoto MODULE ----------------===================
-
-
+4. Review configs and add entries to mysite/_config/config.yml
+(or similar) as necessary.
+In the _config/ folder of this module
+you should to find some examples of config options (if any).
 
 Config Examples
 ------------------------------------------------
 e.g.
-PrettyPhoto::set_more_config("AnimationSpeed: 'normal':, opacity: 0.80");
 
 choose from options below
 AnimationSpeed: 'normal', /* fast/slow/normal */
