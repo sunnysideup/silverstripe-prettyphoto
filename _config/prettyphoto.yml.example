@@ -1,0 +1,6 @@
+PrettyPhoto:
+  themes: []
+  theme: ""
+  more_config:
+    social_tools: false
+  selector: body
