@@ -31,7 +31,7 @@ class PrettyPhoto extends Object {
 			if($config) {
 				$config .= $moreConfig;
 			}
-			Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.self::$selector.'")});', "prettyPhotoCustomScript");
+			Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.$this->config()->get("selector").'")});', "prettyPhotoCustomScript");
 		}
 	}
 
