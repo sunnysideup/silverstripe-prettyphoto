@@ -6,7 +6,7 @@ class PrettyPhoto extends Object {
 
 	private static $theme = "";
 
-	private static $more_config = "social_tools: false";
+	private static $more_config = array("social_tools" =>  false);
 
 	private static $selector = "body";
 
@@ -21,17 +21,23 @@ class PrettyPhoto extends Object {
 
 			$config = '';
 			$theme = Config::inst()->get("PrettyPhoto", "theme");
-			$moreConfig = Config::inst()->get("PrettyPhoto", "more_config");
+			$moreConfigArray = Config::inst()->get("PrettyPhoto", "more_config");
+			foreach($moreConfigArray as $key => $value) {
+				if($value === false) {
+					$value = "false";
+				}
+				$moreConfigArray[$key] = "$key: $value";
+			}
 			if($theme) {
 				$config .= "theme: '".$theme."'";
 			}
-			if($config && $moreConfig) {
+			if($config && count($moreConfigArray)) {
 				$config .= ", ";
 			}
 			if($config) {
-				$config .= $moreConfig;
+				$config .= implode(",", $moreConfigArray);
 			}
-			Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.$this->config()->get("selector").'")});', "prettyPhotoCustomScript");
+			Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.Config::inst()->get("PrettyPhoto", "selector").'")});', "prettyPhotoCustomScript");
 		}
 	}
 
