@@ -26,7 +26,7 @@ class PrettyPhoto extends Object {
 				if($value === false) {
 					$value = "false";
 				}
-				$moreConfigArray[$key] = "$key: $value";
+				$moreConfigArray[$key] = "$key: '$value'";
 			}
 			if($theme) {
 				$config .= "theme: '".$theme."'";
