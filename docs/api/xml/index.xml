@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<index xmlns="http://xml.phpdox.net/src" basedir="/var/www/_modules/prettyphoto/trunk">
+  <namespace name="">
+    <class name="PrettyPhoto" src="code/PrettyPhoto.php" xml="classes/PrettyPhoto.xml"/>
+  </namespace>
+</index>
