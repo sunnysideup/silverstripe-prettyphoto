@@ -1,23 +1,28 @@
 {
-	"name": "sunnysideup/prettyphoto",
-	"type": "silverstripe-module",
-	"description": "adds 'pretty photo' - a jQuery library to your Silverstripe application ",
-	"homepage": "https://github.com/sunnysideup/silverstripe-prettyphoto",
-	"keywords": ["prettyPhoto", "silverstripe", "jquery", "gallery", "pop-up", "modal"],
-	"license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
-	"authors":[
-		{
-			"name": "Nicolaas Francken",
-			"homepage": "https://github.com/sunnysideup",
-			"email" : "modules@sunnysideup.co.nz",
-			"role" : "lead developer"
-		}
-	],
-	"require":{
-		"silverstripe/framework": "~3.1",
-		"silverstripe/cms": "~3.1"
-	},
-	"extra": {
-		"installer-name": "prettyphoto"
-	}
+    "name": "sunnysideup/prettyphoto",
+    "type": "silverstripe-module",
+    "description": "adds 'pretty photo' - a jQuery library to your Silverstripe application ",
+    "keywords": [
+        "prettyPhoto",
+        "silverstripe",
+        "jquery",
+        "gallery",
+        "pop-up",
+        "modal"
+    ],
+    "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
+    "authors": [
+        {
+            "name": "Nicolaas Francken",
+            "email": "modules@sunnysideup.co.nz",
+            "role": "lead developer"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "~3.1",
+        "silverstripe/cms": "~3.1"
+    },
+    "extra": {
+        "installer-name": "prettyphoto"
+    }
 }
