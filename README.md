@@ -35,23 +35,25 @@ Installation Instructions
 
 2. add the following stuff to controller class:
 
+```php
 class Page_Controller extends ContentController {
 
-	function init(){
-		parent::init();
-		PrettyPhoto::include_code();
-	}
+    function init(){
+        parent::init();
+        PrettyPhoto::include_code();
+    }
 
 }
+```
 
 OR TO REMOVE IT LIKE THIS:
 
 class MyPageWithoutPrettyPhoto_Controller extends Page_Controller {
 
-	function init(){
-		parent::init();
-		PrettyPhoto::block();
-	}
+    function init(){
+        parent::init();
+        PrettyPhoto::block();
+    }
 
 }
 
