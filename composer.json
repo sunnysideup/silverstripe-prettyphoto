@@ -3,8 +3,10 @@
     "type": "silverstripe-module",
     "description": "adds 'pretty photo' - a jQuery library to your Silverstripe application ",
     "keywords": [
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
         "prettyPhoto",
-        "silverstripe",
         "jquery",
         "gallery",
         "pop-up",

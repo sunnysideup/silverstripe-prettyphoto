@@ -6,4 +6,3 @@
  **/
 
 define('SS_PRETTYPHOTO_DIR', 'prettyphoto');
-
