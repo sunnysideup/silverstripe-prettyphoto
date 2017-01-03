@@ -1,79 +1,72 @@
-Pretty Photo================================================================================
+# Silverstripe prettyphoto module
+[![Build Status](https://travis-ci.org/sunnysideup/silverstripe-prettyphoto.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-prettyphoto)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-prettyphoto/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-prettyphoto/?branch=master)
+[![codecov.io](https://codecov.io/github/sunnysideup/silverstripe-prettyphoto/coverage.svg?branch=master)](https://codecov.io/github/sunnysideup/silverstripe-prettyphoto?branch=master)
+![helpfulrobot](https://helpfulrobot.io/sunnysideup/prettyphoto/badge)
 
-Adds the jQuery Pretty Photo extension to your
-Silverstripe Website.
-
-SEE:
-- http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
-- http://jquery-plugins.net/prettyphoto-jquery-lightbox-clone
-
-
-Developer
------------------------------------------------
-Nicolaas Francken [at] sunnysideup.co.nz
+[![Latest Stable Version](https://poser.pugx.org/sunnysideup/prettyphoto/version)](https://packagist.org/packages/sunnysideup/prettyphoto)
+[![License](https://poser.pugx.org/sunnysideup/prettyphoto/license)](https://packagist.org/packages/sunnysideup/prettyphoto)
+[![Monthly Downloads](https://poser.pugx.org/sunnysideup/prettyphoto/d/monthly)](https://packagist.org/packages/sunnysideup/prettyphoto)
 
 
-Requirements
------------------------------------------------
-see composer.json
+## Documentation
 
 
-Documentation
------------------------------------------------
-Please contact author for more details.
 
-Any bug reports and/or feature requests will be
-looked at in detail
+ * [Developer Docs](docs/en/INDEX.md)
+ * [User Guide](docs/en/userguide.md)
+ * [API](http://ssmods.com/apis/prettyphoto/docs/en/api/)
 
-We are also very happy to provide personalised support
-for this module in exchange for a small donation.
+## Requirements
 
 
-Installation Instructions
------------------------------------------------
-1. add module as per usual
 
-2. add the following stuff to controller class:
+see [composer.json](composer.json) for details
 
-```php
-class Page_Controller extends ContentController {
+### Suggested Modules
 
-    function init(){
-        parent::init();
-        PrettyPhoto::include_code();
-    }
 
-}
+
+see [composer.json](composer.json) for details
+
+
+## Installation
+
+
+```
+composer require sunnysideup/prettyphoto
 ```
 
-OR TO REMOVE IT LIKE THIS:
-
-class MyPageWithoutPrettyPhoto_Controller extends Page_Controller {
-
-    function init(){
-        parent::init();
-        PrettyPhoto::block();
-    }
-
-}
+### Configuration
 
 
-3. in your templates, add (the rel="prettPhoto" is the magic part):
 
- <a href="mylargepicture.gif" rel="prettyPhoto"><img src="mysmallpicture.gif" /></a>
+In the `_config` folder you will find the `prettyphoto.yml.example`
+file that shows options for the configuration of this module.
 
- OR FOR A SET OF PHOTOS:
+We recommend that you:
 
- <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
- <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
+  1. copy these `prettyphoto.yml.example` files into your
+`mysite/_config` folder
+  2. remove the .example extension
+  3. delete the lines you not care about, and
+  4. adjust the configurations that you would like to use.
 
-4. Review configs and add entries to mysite/_config/config.yml
-(or similar) as necessary.
-In the _config/ folder of this module
-you can usually find some examples of config options (if any).
 
-Config Examples
-------------------------------------------------
+## Contributing
 
-check http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
-for more details.
+
+
+We welcome any contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
+
+## Paid assistance
+
+
+
+You can pay us to create an improved / adapted version of this module for your own projects.  Please contact us if you like to find out more: [www.sunnysideup.co.nz](http://www.sunnysideup.co.nz)
+
+## Author
+
+
+
+Sunny Side Up Ltd.
