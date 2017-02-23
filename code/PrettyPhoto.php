@@ -40,7 +40,7 @@ class PrettyPhoto extends Object
             if ($config && count($moreConfigArray)) {
                 $config .= ", ";
             }
-            if ($config) {
+            if (count($moreConfigArray)) {
                 $config .= implode(",", $moreConfigArray);
             }
             Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.Config::inst()->get("PrettyPhoto", "selector").'")});', "prettyPhotoCustomScript");
