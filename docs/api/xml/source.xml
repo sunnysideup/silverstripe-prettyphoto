@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<source xmlns="http://xml.phpdox.net/src">
-  <dir name="/var/www/_modules/prettyphoto/trunk">
-    <file name="_config.php" size="113" time="2015-03-14T10:23:40+13:00" unixtime="1426281820" sha1="eb1c17765a138cf584a8021e838a4ed411a3863b" xml="tokens/_config.php.xml"/>
-    <dir name="code">
-      <file name="PrettyPhoto.php" size="1759" time="2015-03-14T10:23:40+13:00" unixtime="1426281820" sha1="f123a81d5dc9ad766d9434515dbcf2a57f6f7600" xml="tokens/code/PrettyPhoto.php.xml"/>
-    </dir>
-  </dir>
-</source>
