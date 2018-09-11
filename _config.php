@@ -1,5 +1,10 @@
 <?php
 
+namespace Sunnysideup\PrettyPhoto;
+
+
+
+
 /**
  * developed by www.sunnysideup.co.nz
  *

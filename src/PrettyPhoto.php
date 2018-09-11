@@ -1,5 +1,13 @@
 <?php
 
+namespace Sunnysideup\PrettyPhoto;
+
+use ViewableData;
+use Director;
+use Requirements;
+use Config;
+
+
 class PrettyPhoto extends ViewableData/*
 ### @@@@ START UPGRADE REQUIRED @@@@ ###
 FIND:  extends Object
