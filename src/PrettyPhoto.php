@@ -21,8 +21,8 @@ NOTE: This used to extend Object, but object does not exist anymore. You can als
             self::block();
         } else {
             Requirements::javascript('silverstripe/admin: thirdparty/jquery/jquery.js');
-            Requirements::javascript('prettyphoto/javascript/jquery.prettyPhoto.js');
-            Requirements::css('prettyphoto/css/prettyPhoto.css');
+            Requirements::javascript('sunnysideup/prettyphoto: prettyphoto/javascript/jquery.prettyPhoto.js');
+            Requirements::css('sunnysideup/prettyphoto: prettyphoto/css/prettyPhoto.css');
 
             $config = '';
             $theme = Config::inst()->get("PrettyPhoto", "theme");
