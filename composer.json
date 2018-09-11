@@ -1,6 +1,6 @@
 {
     "name": "sunnysideup/prettyphoto",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "description": "adds 'pretty photo' - a jQuery library to your Silverstripe application ",
     "keywords": [
         "Silverstripe-CMS",
