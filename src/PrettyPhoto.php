@@ -2,10 +2,16 @@
 
 namespace Sunnysideup\PrettyPhoto;
 
-use ViewableData;
-use Director;
-use Requirements;
-use Config;
+
+
+
+
+use SilverStripe\Control\Director;
+use SilverStripe\View\Requirements;
+use SilverStripe\Core\Config\Config;
+use Sunnysideup\PrettyPhoto\PrettyPhoto;
+use SilverStripe\View\ViewableData;
+
 
 
 class PrettyPhoto extends ViewableData/*
@@ -33,8 +39,8 @@ NOTE: This used to extend Object, but object does not exist anymore. You can als
             Requirements::css('sunnysideup/prettyphoto: prettyphoto/css/prettyPhoto.css');
 
             $config = '';
-            $theme = Config::inst()->get("PrettyPhoto", "theme");
-            $moreConfigArray = Config::inst()->get("PrettyPhoto", "more_config");
+            $theme = Config::inst()->get(PrettyPhoto::class, "theme");
+            $moreConfigArray = Config::inst()->get(PrettyPhoto::class, "more_config");
             foreach ($moreConfigArray as $key => $value) {
                 if ($value === false) {
                     $value = "false";
@@ -56,7 +62,7 @@ NOTE: This used to extend Object, but object does not exist anymore. You can als
             if (count($moreConfigArray)) {
                 $config .= implode(",", $moreConfigArray);
             }
-            Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.Config::inst()->get("PrettyPhoto", "selector").'")});', "prettyPhotoCustomScript");
+            Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.Config::inst()->get(PrettyPhoto::class, "selector").'")});', "prettyPhotoCustomScript");
         }
     }
 
