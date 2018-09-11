@@ -24,5 +24,11 @@
         "silverstripe/framework": "~4.0",
         "silverstripe/recipe-cms": "~1"
     },
-    "extra": []
+    "extra": {
+        "expose": [
+            "javascript",
+            "images",
+            "css"
+        ]
+    }
 }
