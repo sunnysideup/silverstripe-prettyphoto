@@ -1,6 +1,11 @@
 <?php
 
-class PrettyPhoto extends Object
+class PrettyPhoto extends ViewableData/*
+### @@@@ START UPGRADE REQUIRED @@@@ ###
+FIND:  extends Object
+NOTE: This used to extend Object, but object does not exist anymore. You can also manually add use Extensible, use Injectable, and use Configurable 
+### @@@@ END UPGRADE REQUIRED @@@@ ###
+*/
 {
     private static $themes = array("dark_rounded", "dark_square", "facebook", "light_rounded", "light_square");
 
@@ -15,7 +20,7 @@ class PrettyPhoto extends Object
         if (Director::is_ajax()) {
             self::block();
         } else {
-            Requirements::javascript(THIRDPARTY_DIR."/jquery/jquery.js");
+            Requirements::javascript('silverstripe/admin: thirdparty/jquery/jquery.js');
             Requirements::javascript('prettyphoto/javascript/jquery.prettyPhoto.js');
             Requirements::css('prettyphoto/css/prettyPhoto.css');
 
