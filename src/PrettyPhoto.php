@@ -1,6 +1,25 @@
 <?php
 
-class PrettyPhoto extends Object
+namespace Sunnysideup\PrettyPhoto;
+
+
+
+
+
+use SilverStripe\Control\Director;
+use SilverStripe\View\Requirements;
+use SilverStripe\Core\Config\Config;
+use Sunnysideup\PrettyPhoto\PrettyPhoto;
+use SilverStripe\View\ViewableData;
+
+
+
+class PrettyPhoto extends ViewableData/*
+### @@@@ START UPGRADE REQUIRED @@@@ ###
+FIND:  extends Object
+NOTE: This used to extend Object, but object does not exist anymore. You can also manually add use Extensible, use Injectable, and use Configurable 
+### @@@@ END UPGRADE REQUIRED @@@@ ###
+*/
 {
     private static $themes = array("dark_rounded", "dark_square", "facebook", "light_rounded", "light_square");
 
@@ -15,13 +34,13 @@ class PrettyPhoto extends Object
         if (Director::is_ajax()) {
             self::block();
         } else {
-            Requirements::javascript(THIRDPARTY_DIR."/jquery/jquery.js");
-            Requirements::javascript('prettyphoto/javascript/jquery.prettyPhoto.js');
-            Requirements::css('prettyphoto/css/prettyPhoto.css');
+            Requirements::javascript('silverstripe/admin: thirdparty/jquery/jquery.js');
+            Requirements::javascript('sunnysideup/prettyphoto: prettyphoto/javascript/jquery.prettyPhoto.js');
+            Requirements::css('sunnysideup/prettyphoto: prettyphoto/css/prettyPhoto.css');
 
             $config = '';
-            $theme = Config::inst()->get("PrettyPhoto", "theme");
-            $moreConfigArray = Config::inst()->get("PrettyPhoto", "more_config");
+            $theme = Config::inst()->get(PrettyPhoto::class, "theme");
+            $moreConfigArray = Config::inst()->get(PrettyPhoto::class, "more_config");
             foreach ($moreConfigArray as $key => $value) {
                 if ($value === false) {
                     $value = "false";
@@ -43,7 +62,7 @@ class PrettyPhoto extends Object
             if (count($moreConfigArray)) {
                 $config .= implode(",", $moreConfigArray);
             }
-            Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.Config::inst()->get("PrettyPhoto", "selector").'")});', "prettyPhotoCustomScript");
+            Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.Config::inst()->get(PrettyPhoto::class, "selector").'")});', "prettyPhotoCustomScript");
         }
     }
 

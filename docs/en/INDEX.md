@@ -67,7 +67,7 @@ class MyPageWithoutPrettyPhoto_Controller extends Page_Controller {
  <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
  <a href="mylargepicture.gif" rel="prettyPhoto[gallery]"><img src="mysmallpicture.gif" /></a>
 
-4. Review configs and add entries to mysite/_config/config.yml
+4. Review configs and add entries to app/_config/config.yml
 (or similar) as necessary.
 In the _config/ folder of this module
 you can usually find some examples of config options (if any).
