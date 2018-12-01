@@ -8,7 +8,7 @@ use SilverStripe\Core\Config\Config;
 use Sunnysideup\PrettyPhoto\PrettyPhoto;
 use SilverStripe\View\ViewableData;
 
-class PrettyPhoto extends ViewableData 
+class PrettyPhoto extends ViewableData
 {
     private static $themes = array("dark_rounded", "dark_square", "facebook", "light_rounded", "light_square");
 
