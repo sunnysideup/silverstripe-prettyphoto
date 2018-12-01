@@ -26,9 +26,9 @@
     },
     "extra": {
         "expose": [
-            "javascript",
-            "images",
-            "css"
+            "client/javascript",
+            "client/images",
+            "client/css"
         ]
     }
 }
