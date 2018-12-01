@@ -2,24 +2,13 @@
 
 namespace Sunnysideup\PrettyPhoto;
 
-
-
-
-
 use SilverStripe\Control\Director;
 use SilverStripe\View\Requirements;
 use SilverStripe\Core\Config\Config;
 use Sunnysideup\PrettyPhoto\PrettyPhoto;
 use SilverStripe\View\ViewableData;
 
-
-
-class PrettyPhoto extends ViewableData/*
-### @@@@ START UPGRADE REQUIRED @@@@ ###
-FIND:  extends Object
-NOTE: This used to extend Object, but object does not exist anymore. You can also manually add use Extensible, use Injectable, and use Configurable 
-### @@@@ END UPGRADE REQUIRED @@@@ ###
-*/
+class PrettyPhoto extends ViewableData 
 {
     private static $themes = array("dark_rounded", "dark_square", "facebook", "light_rounded", "light_square");
 
