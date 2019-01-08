@@ -24,8 +24,8 @@ class PrettyPhoto extends ViewableData
             self::block();
         } else {
             Requirements::javascript('silverstripe/admin: thirdparty/jquery/jquery.js');
-            Requirements::javascript('sunnysideup/prettyphoto: prettyphoto/javascript/jquery.prettyPhoto.js');
-            Requirements::css('sunnysideup/prettyphoto: prettyphoto/css/prettyPhoto.css');
+            Requirements::javascript('sunnysideup/prettyphoto: client/javascript/jquery.prettyPhoto.js');
+            Requirements::css('sunnysideup/prettyphoto: client/css/prettyPhoto.css');
 
             $config = '';
             $theme = Config::inst()->get(PrettyPhoto::class, "theme");
