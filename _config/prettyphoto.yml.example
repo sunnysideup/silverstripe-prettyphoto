@@ -2,7 +2,7 @@
 # pretty photo
 ###################################
 
-PrettyPhoto:
+Sunnysideup\PrettyPhoto\PrettyPhoto:
   themes: []
   theme: ""
   more_config:
