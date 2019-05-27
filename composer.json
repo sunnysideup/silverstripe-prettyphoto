@@ -29,6 +29,11 @@
             "client/javascript",
             "client/images",
             "client/css"
-        ]
+        ],
+        "autoload": {
+            "psr-4": {
+                "Sunnysideup\\PrettyPhoto\\": "src/"
+            }
+        }
     }
 }
