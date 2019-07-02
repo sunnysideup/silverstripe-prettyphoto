@@ -10,11 +10,11 @@ use SilverStripe\View\ViewableData;
 
 class PrettyPhoto extends ViewableData
 {
-    private static $themes = array("dark_rounded", "dark_square", "facebook", "light_rounded", "light_square");
+    private static $themes = ["dark_rounded", "dark_square", "facebook", "light_rounded", "light_square"];
 
     private static $theme = "";
 
-    private static $more_config = array("social_tools" =>  false);
+    private static $more_config = ["social_tools" =>  false];
 
     private static $selector = "body";
 
