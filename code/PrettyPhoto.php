@@ -1,6 +1,6 @@
 <?php
 
-class PrettyPhoto extends Object
+class PrettyPhoto extends SS_Object
 {
     private static $themes = array("dark_rounded", "dark_square", "facebook", "light_rounded", "light_square");
 
