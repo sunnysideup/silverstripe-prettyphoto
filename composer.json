@@ -1,38 +1,38 @@
 {
-    "name": "sunnysideup/prettyphoto",
-    "type": "silverstripe-vendormodule",
-    "description": "adds 'pretty photo' - a jQuery library to your Silverstripe application ",
-    "keywords": [
-        "Silverstripe-CMS",
-        "CMS",
-        "Silverstripe",
-        "prettyPhoto",
-        "jquery",
-        "gallery",
-        "pop-up",
-        "modal"
-    ],
-    "license": "BSD-3-Clause",
-    "authors": [
-        {
-            "name": "Nicolaas Francken",
-            "email": "modules@sunnysideup.co.nz",
-            "role": "lead developer"
-        }
-    ],
-    "require": {
-        "silverstripe/recipe-cms": "~4@stable"
-    },
-    "extra": {
-        "expose": [
-            "client/javascript",
-            "client/images",
-            "client/css"
-        ],
-        "autoload": {
-            "psr-4": {
-                "Sunnysideup\\PrettyPhoto\\": "src/"
-            }
-        }
+  "name": "sunnysideup/prettyphoto",
+  "type": "silverstripe-vendormodule",
+  "description": "adds 'pretty photo' - a jQuery library to your Silverstripe application ",
+  "keywords": [
+    "Silverstripe-CMS",
+    "CMS",
+    "Silverstripe",
+    "prettyPhoto",
+    "jquery",
+    "gallery",
+    "pop-up",
+    "modal"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Nicolaas Francken",
+      "email": "modules@sunnysideup.co.nz",
+      "role": "lead developer"
     }
-}
+  ],
+  "require": {
+    "silverstripe/recipe-cms": "~4@stable"
+  },
+  "extra": {
+    "expose": [
+      "client/javascript",
+      "client/images",
+      "client/css"
+    ]
+  },
+  "autoload": {
+    "psr-4": {
+      "Sunnysideup\\PrettyPhoto\\": "src/"
+    }
+  }
+ }
