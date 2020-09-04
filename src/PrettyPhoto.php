@@ -3,20 +3,19 @@
 namespace Sunnysideup\PrettyPhoto;
 
 use SilverStripe\Control\Director;
-use SilverStripe\View\Requirements;
 use SilverStripe\Core\Config\Config;
-use Sunnysideup\PrettyPhoto\PrettyPhoto;
+use SilverStripe\View\Requirements;
 use SilverStripe\View\ViewableData;
 
 class PrettyPhoto extends ViewableData
 {
-    private static $themes = ["dark_rounded", "dark_square", "facebook", "light_rounded", "light_square"];
+    private static $themes = ['dark_rounded', 'dark_square', 'facebook', 'light_rounded', 'light_square'];
 
-    private static $theme = "";
+    private static $theme = '';
 
-    private static $more_config = ["social_tools" =>  false];
+    private static $more_config = ['social_tools' => false];
 
-    private static $selector = "body";
+    private static $selector = 'body';
 
     public static function include_code()
     {
@@ -28,30 +27,30 @@ class PrettyPhoto extends ViewableData
             Requirements::css('sunnysideup/prettyphoto: client/css/prettyPhoto.css');
 
             $config = '';
-            $theme = Config::inst()->get(PrettyPhoto::class, "theme");
-            $moreConfigArray = Config::inst()->get(PrettyPhoto::class, "more_config");
+            $theme = Config::inst()->get(PrettyPhoto::class, 'theme');
+            $moreConfigArray = Config::inst()->get(PrettyPhoto::class, 'more_config');
             foreach ($moreConfigArray as $key => $value) {
                 if ($value === false) {
-                    $value = "false";
+                    $value = 'false';
                 } elseif ($value === true) {
-                    $value = "true";
+                    $value = 'true';
                 } elseif ($value === intval($value)) {
                     //$value = $value;
                 } else {
-                    $value = " '$value' ";
+                    $value = " '${value}' ";
                 }
-                $moreConfigArray[$key] = "$key: $value";
+                $moreConfigArray[$key] = "${key}: ${value}";
             }
             if ($theme) {
-                $config .= "theme: '".$theme."'";
+                $config .= "theme: '" . $theme . "'";
             }
             if ($config && count($moreConfigArray)) {
-                $config .= ", ";
+                $config .= ', ';
             }
             if (count($moreConfigArray)) {
-                $config .= implode(",", $moreConfigArray);
+                $config .= implode(',', $moreConfigArray);
             }
-            Requirements::customScript('PrettyPhotoInitConfigs = {'.$config.'}; jQuery(document).ready(function(){PrettyPhotoLoader.load("'.Config::inst()->get(PrettyPhoto::class, "selector").'")});', "prettyPhotoCustomScript");
+            Requirements::customScript('PrettyPhotoInitConfigs = {' . $config . '}; jQuery(document).ready(function(){PrettyPhotoLoader.load("' . Config::inst()->get(PrettyPhoto::class, 'selector') . '")});', 'prettyPhotoCustomScript');
         }
     }
 
@@ -59,6 +58,6 @@ class PrettyPhoto extends ViewableData
     {
         Requirements::block('prettyphoto/javascript/jquery.prettyPhoto.js');
         Requirements::block('prettyphoto/css/prettyPhoto.css');
-        Requirements::block("prettyPhotoCustomScript");
+        Requirements::block('prettyPhotoCustomScript');
     }
 }
