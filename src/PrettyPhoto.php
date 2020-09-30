@@ -5,10 +5,16 @@ namespace Sunnysideup\PrettyPhoto;
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\View\Requirements;
-use SilverStripe\View\ViewableData;
+use SilverStripe\Core\Config\Configurable;
+use SilverStripe\Core\Extensible;
+use SilverStripe\Core\Injector\Injectable;
 
-class PrettyPhoto extends ViewableData
+class PrettyPhoto
 {
+    use Configurable;
+    use Extensible;
+    use Injectable;
+
     private static $themes = ['dark_rounded', 'dark_square', 'facebook', 'light_rounded', 'light_square'];
 
     private static $theme = '';
