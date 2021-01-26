@@ -4,10 +4,10 @@ namespace Sunnysideup\PrettyPhoto;
 
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Config\Config;
-use SilverStripe\View\Requirements;
 use SilverStripe\Core\Config\Configurable;
 use SilverStripe\Core\Extensible;
 use SilverStripe\Core\Injector\Injectable;
+use SilverStripe\View\Requirements;
 
 class PrettyPhoto
 {
