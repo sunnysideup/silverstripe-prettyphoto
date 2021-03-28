@@ -40,12 +40,12 @@ class PrettyPhoto
                     $value = 'false';
                 } elseif ($value === true) {
                     $value = 'true';
-                } elseif ($value === intval($value)) {
+                } elseif ($value === (int) $value) {
                     //$value = $value;
                 } else {
-                    $value = " '${value}' ";
+                    $value = " '{$value}' ";
                 }
-                $moreConfigArray[$key] = "${key}: ${value}";
+                $moreConfigArray[$key] = "{$key}: {$value}";
             }
             if ($theme) {
                 $config .= "theme: '" . $theme . "'";
@@ -53,7 +53,7 @@ class PrettyPhoto
             if ($config && count($moreConfigArray)) {
                 $config .= ', ';
             }
-            if (count($moreConfigArray)) {
+            if (count($moreConfigArray) > 0) {
                 $config .= implode(',', $moreConfigArray);
             }
             Requirements::customScript('PrettyPhotoInitConfigs = {' . $config . '}; jQuery(document).ready(function(){PrettyPhotoLoader.load("' . Config::inst()->get(PrettyPhoto::class, 'selector') . '")});', 'prettyPhotoCustomScript');
