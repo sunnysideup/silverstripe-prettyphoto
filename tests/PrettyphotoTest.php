@@ -2,6 +2,10 @@
 
 use SilverStripe\Dev\SapphireTest;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 class PrettyphotoTest extends SapphireTest
 {
     protected $usesDatabase = false;

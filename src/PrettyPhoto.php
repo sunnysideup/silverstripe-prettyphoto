@@ -36,9 +36,9 @@ class PrettyPhoto
             $theme = Config::inst()->get(PrettyPhoto::class, 'theme');
             $moreConfigArray = Config::inst()->get(PrettyPhoto::class, 'more_config');
             foreach ($moreConfigArray as $key => $value) {
-                if ($value === false) {
+                if (false === $value) {
                     $value = 'false';
-                } elseif ($value === true) {
+                } elseif (true === $value) {
                     $value = 'true';
                 } elseif ($value === (int) $value) {
                     //$value = $value;
