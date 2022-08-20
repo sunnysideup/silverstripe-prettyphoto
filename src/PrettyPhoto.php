@@ -45,17 +45,22 @@ class PrettyPhoto
                 } else {
                     $value = " '{$value}' ";
                 }
+
                 $moreConfigArray[$key] = "{$key}: {$value}";
             }
+
             if ($theme) {
                 $config .= "theme: '" . $theme . "'";
             }
+
             if ($config && count($moreConfigArray)) {
                 $config .= ', ';
             }
+
             if (count($moreConfigArray) > 0) {
                 $config .= implode(',', $moreConfigArray);
             }
+
             Requirements::customScript('PrettyPhotoInitConfigs = {' . $config . '}; jQuery(document).ready(function(){PrettyPhotoLoader.load("' . Config::inst()->get(PrettyPhoto::class, 'selector') . '")});', 'prettyPhotoCustomScript');
         }
     }
