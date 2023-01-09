@@ -28,7 +28,7 @@ class PrettyPhoto
         if (Director::is_ajax()) {
             self::block();
         } else {
-            Requirements::javascript('silverstripe/admin: thirdparty/jquery/jquery.js');
+            Requirements::javascript('https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js');
             Requirements::javascript('sunnysideup/prettyphoto: client/javascript/jquery.prettyPhoto.js');
             Requirements::themedCSS('client/css/prettyPhoto');
 
