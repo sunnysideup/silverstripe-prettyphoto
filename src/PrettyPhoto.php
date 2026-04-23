@@ -43,10 +43,10 @@ class PrettyPhoto
                 } elseif ($value === (int) $value) {
                     //$value = $value;
                 } else {
-                    $value = " '{$value}' ";
+                    $value = sprintf(" '%s' ", $value);
                 }
 
-                $moreConfigArray[$key] = "{$key}: {$value}";
+                $moreConfigArray[$key] = sprintf('%s: %s', $key, $value);
             }
 
             if ($theme) {
